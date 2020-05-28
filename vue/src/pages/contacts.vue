@@ -116,8 +116,8 @@
 					return this.$http.post(this.$address + '/list', {
 							name: this.username,
 						})
-						.then(() => {
-							this.contacts.push({id: this.contacts.length ? this.contacts[this.contacts.length - 1].id + 1 : 1, name: this.username});
+						.then((data) => {
+                            this.contacts.push(data.data.contacts);
 							this.username = '';
 						});
 				}
